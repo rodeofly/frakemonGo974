@@ -17,6 +17,11 @@
       x = prompt("Entrer votre réponse (un nombre)", "");
       if ((x !== null) && (parseInt(x) === 2)) {
         $("#gmaps").attr("src", INDICES[1]);
+        $("#qrcode").qrcode({
+          width: 64,
+          height: 64,
+          text: INDICES[1]
+        });
         return $("#indice").dialog("open");
       } else {
         return alert("Désolé ! ce n'est pas ça !");

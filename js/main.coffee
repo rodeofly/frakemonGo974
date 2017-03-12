@@ -10,6 +10,10 @@ $ ->
     x = prompt "Entrer votre réponse (un nombre)", ""
     if (x != null) and (parseInt(x) is 2)
       $( "#gmaps").attr "src", INDICES[1]
+      $( "#qrcode" ).qrcode
+        width: 64
+        height: 64
+        text: INDICES[1]
       $( "#indice").dialog "open"
     else
       alert "Désolé ! ce n'est pas ça !"
