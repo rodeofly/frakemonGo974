@@ -154,6 +154,18 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+#indice {
+  left : 25%;
+  top : 25%;
+  position : absolute;
+  background : white;
+  width : 600px;
+  height : 600px;
+  border : solid black 2px;
+  margin-left : auto;
+  padding-left: 50px;
+
+}
 #gmaps {
   border : none;
 }
