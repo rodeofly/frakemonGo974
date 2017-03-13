@@ -164,6 +164,7 @@ nav a:hover {
   border : solid black 2px;
   margin-left : auto;
   padding-left: 50px;
+  z-index : 1000;
 
 }
 #gmaps {
