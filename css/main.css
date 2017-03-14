@@ -153,26 +153,78 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.MathJax_Preview {
+  display : inline-block;
 
-#indice {
+}
+aside {
+  text-align : center;
+
+}
+
+#qrcode-frakemonGo974 {
+ 
+}
+
+.info {
   left : 25%;
   top : 25%;
   position : absolute;
   background : white;
   width : 600px;
   height : 600px;
-  border : solid black 2px;
+  border : solid black 5px;
+  border-radius : 5px;
   margin-left : auto;
-  padding-left: 50px;
+  padding: 25px;
   z-index : 1000;
+  text-align : justify;
+  overflow-y: scroll;
 
 }
 #gmaps {
   border : none;
 }
 
+#FrakCalc-button1, #FrakCalc-button2, .close {
+  float:right;
 
+}
 
+input {
+  text-align:center
+}
+
+.produit {
+  text-align: center;
+  font-size: 2em;
+
+}
+
+.integer
+{
+ display: inline-block;
+}
+
+.fraction
+{
+  
+  
+  display: inline-block;
+  vertical-align: middle; : middle;
+}
+
+.numerateur
+{
+  display:block;
+  border-bottom : solid black 5px;
+
+}
+
+.denominateur
+{
+  display:block;
+}
 
 
 

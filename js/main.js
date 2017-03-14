@@ -3,6 +3,7 @@
   var INDICES, QRCODE_SIZE, compile, den, dump, exec, limit, num, step, val;
 
   INDICES = {
+    "frakemonGo974": "http://zotweb.re/irem/frakemonGo974/",
     1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9783921877683!2d-73.97635568459349!3d40.762499979326506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8e9cfc7444d8f876!2sTrump+Tower!5e0!3m2!1sfr!2sus!4v1489314254841"
   };
 
@@ -58,11 +59,49 @@
   };
 
   $(function() {
-    $("body").on("click", ".close", function() {
-      return $("#indice").hide();
+    var isInt;
+    $("button").button();
+    $("#qrcode-frakemonGo974").qrcode({
+      width: QRCODE_SIZE,
+      height: QRCODE_SIZE,
+      text: INDICES.frakemonGo974
     });
-    $("#indice").draggable();
-    $("#indice").hide();
+    $("body").on("click", ".close", function() {
+      return $(".info").hide();
+    });
+    $(".info").hide();
+    $("body").on("click", "#FrakDocLink", function() {
+      return $("#FrakDoc").show();
+    });
+    $("body").on("click", "#FrakCalcLink", function() {
+      return $("#FrakCalc").show();
+    });
+    isInt = function(value) {
+      return (!isNaN(value)) && (parseInt(Number(value)) === value) && (!isNaN(parseInt(value, 10)));
+    };
+    $("body").on("click", "#FrakCalc-button1", function() {
+      var a, b, c;
+      a = parseInt($("#calc-input1").val());
+      b = parseInt($("#calc-input2").val());
+      c = parseInt($("#calc-input3").val());
+      if (isInt(a * b * c)) {
+        return alert(a * b / c);
+      } else {
+        return alert("Les nombres ne sont pas des entiers");
+      }
+    });
+    $("body").on("click", "#FrakCalc-button2", function() {
+      var a, b, c, d;
+      a = parseInt($("#calc-input4").val());
+      b = parseInt($("#calc-input5").val());
+      c = parseInt($("#calc-input6").val());
+      d = parseInt($("#calc-input7").val());
+      if (isInt(a * b * c * d)) {
+        return alert(a / b * c / d);
+      } else {
+        return alert("Les nombres ne sont pas des entiers");
+      }
+    });
     $("body").on("click", "#reponse1", function() {
       var x;
       x = prompt("Entrer votre réponse (un nombre)", "");
@@ -92,7 +131,7 @@
           height: QRCODE_SIZE,
           text: INDICES[1]
         });
-        return $("#indice").show().draggable();
+        return $("#indice").show().able();
       } else {
         return alert("Désolé ! ce n'est pas ça !");
       }
