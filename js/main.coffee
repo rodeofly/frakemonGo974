@@ -4,6 +4,11 @@ INDICES =
 
 QRCODE_SIZE = 128
 
+power_of_2 = (n) ->
+  if isNaN(n)
+    return 'Not a number'
+  n and (n & n - 1) == 0
+
 num = new Array
 den = new Array
 val = undefined
@@ -84,17 +89,20 @@ $ ->
   
   $( "body" ).on "click", "#reponse2", ->
     x = parseInt( $( "#input2" ).val() )
-    v = prompt "Entrer votre réponse (un nombre)", ""
-    v = parseInt(v)
-    compile "5/2 3/25 1/5"
-    r = exec(x)
-    if (r is v)
-      $( "#gmaps").attr "src", INDICES[1]
-      $( "#qrcode" ).qrcode
-        width: QRCODE_SIZE
-        height: QRCODE_SIZE
-        text: INDICES[1]
-      $( "#indice" ).show().able()
+    if power_of_2 x
+      v = prompt "Entrer votre réponse (un nombre)", ""
+      v = parseInt(v)
+      compile "5/2 3/25 1/5"
+      r = exec(x)
+      if (r is v)
+        $( "#gmaps").attr "src", INDICES[1]
+        $( "#qrcode" ).qrcode
+          width: QRCODE_SIZE
+          height: QRCODE_SIZE
+          text: INDICES[1]
+        $( "#indice" ).show()
+      else
+        alert "Désolé ! ce n'est pas ça !"
     else
-      alert "Désolé ! ce n'est pas ça !"
+      alert "mmmh ! Le nombre en entrée ne ressemble pas celui d'un Frakhoumane le Blanc !"
 
